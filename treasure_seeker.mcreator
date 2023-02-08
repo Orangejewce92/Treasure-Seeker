@@ -1,0 +1,173 @@
+{
+  "mod_elements": [
+    {
+      "name": "TreasurePick",
+      "type": "tool",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_pick"
+    },
+    {
+      "name": "TreasureBagsAddon",
+      "type": "tab",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_seeker"
+    },
+    {
+      "name": "TreasureChanger",
+      "type": "gui",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_changer"
+    },
+    {
+      "name": "TreasureChangerGUI",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_changer_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OreReverseStation",
+      "type": "block",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_station"
+    },
+    {
+      "name": "TreasureSeeker",
+      "type": "armor",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_seeker",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Treasurepickaxe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasurepickaxe"
+    },
+    {
+      "name": "Treasureseekerhelmet",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasureseekerhelmet"
+    },
+    {
+      "name": "Tresureseekerchestplate",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tresureseekerchestplate"
+    },
+    {
+      "name": "Treasureseekerleggings",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasureseekerleggings"
+    },
+    {
+      "name": "Treasureseekerboots",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasureseekerboots"
+    },
+    {
+      "name": "Treasurechangerstation",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasurechangerstation"
+    },
+    {
+      "name": "TreasurePickEnchant",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "treasure_pick_enchant",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "itemGroup.tabtreasure_seeker": "Treasure Seeker",
+      "item.treasure_bag_addon.treasure_seeker_leggings": "Treasure Seeker Leggings",
+      "item.treasure_seeker.treasure_seeker_leggings": "Treasure Seeker Leggings",
+      "item.treasure_bag_addon.treasure_pick": "Treasure Pickaxe",
+      "item.treasure_seeker.treasure_seeker_chestplate": "Treasure Seeker Body",
+      "item.treasure_seeker.treasure_pick": "Treasure Pickaxe",
+      "block.treasure_seeker.treasure_station": "Treasure Station",
+      "item.treasure_bag_addon.treasure_seeker_boots": "Treasure Seeker Boots",
+      "item.treasure_bag_addon.treasure_seeker_chestplate": "Treasure Seeker Body",
+      "item.treasure_seeker.treasure_seeker_boots": "Treasure Seeker Boots",
+      "block.treasure_bag_addon.ore_reverse_station": "Ore Reverse Station",
+      "item.treasure_seeker.treasure_seeker_helmet": "Treasure Seeker Helmet",
+      "item.treasure_bag_addon.treasure_seeker_helmet": "Treasure Seeker Helmet"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "treasure_seeker",
+    "modName": "Treasure seeker",
+    "version": "2.5.0",
+    "description": "Treasure seeker adds armor and tools.",
+    "author": "orangejewce92",
+    "websiteURL": "https://mcreator.net",
+    "license": "All Rights Reserved",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.treasureseeker",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200348217
+}

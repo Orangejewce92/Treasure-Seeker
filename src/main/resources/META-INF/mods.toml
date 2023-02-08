@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="treasure_seeker"
+version="2.5.0"
+displayName="Treasure seeker"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="orangejewce92"
+description='''
+Treasure seeker adds armor and tools.
+'''
+
+[[dependencies.treasure_seeker]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

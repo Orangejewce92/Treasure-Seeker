@@ -1,0 +1,134 @@
+{
+  "_fv": 34,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 198,
+          "y": 82
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 257,
+          "y": 83
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:TreasurePick"
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 150,
+          "y": 83
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Mine!",
+          "onClick": {
+            "name": "TreasureChangerGUI"
+          },
+          "width": 56,
+          "height": 20,
+          "name": "Mine!",
+          "x": 226,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "golden_pickaxe.png",
+          "use1Xscale": false,
+          "name": "golden_pickaxe.png",
+          "x": 230,
+          "y": 83
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Treasure Station",
+          "color": {
+            "value": -39424,
+            "falpha": 0.0
+          },
+          "name": "Treasure Station",
+          "x": 137,
+          "y": 45
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plus.png",
+          "use1Xscale": true,
+          "name": "plus.png",
+          "x": 177,
+          "y": 86
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Ore",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Ore",
+          "x": 199,
+          "y": 72
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Pickaxe",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Pickaxe",
+          "x": 142,
+          "y": 72
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

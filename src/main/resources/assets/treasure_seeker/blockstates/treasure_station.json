@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "treasure_seeker:block/treasure_station"
+    }
+  }
+}

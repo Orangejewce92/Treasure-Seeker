@@ -1,0 +1,32 @@
+{
+  "_fv": 34,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "golden_pickaxe",
+    "customModelName": "Normal",
+    "name": "Treasure Pickaxe",
+    "specialInfo": [
+      "This pickaxe can Bring Extra Fortune with the Treasure Station"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:TreasureBagsAddon"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 3,
+    "efficiency": 6.0,
+    "attackSpeed": 1.5,
+    "enchantability": 4,
+    "damageVsEntity": 3.9999999999999996,
+    "usageCount": 100,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": true,
+    "damageOnCrafting": false,
+    "onCrafted": {
+      "name": "TreasurePickEnchant"
+    }
+  }
+}
