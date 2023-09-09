@@ -6,7 +6,13 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasure_pick"
+      "registry_name": "treasure_pick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/item/TreasurePickItem.java",
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_pick.json"
+        ]
+      }
     },
     {
       "name": "TreasureBagsAddon",
@@ -14,7 +20,10 @@
       "sortid": 2,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasure_seeker"
+      "registry_name": "treasure_seeker",
+      "metadata": {
+        "files": []
+      }
     },
     {
       "name": "TreasureChanger",
@@ -22,7 +31,14 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasure_changer"
+      "registry_name": "treasure_changer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/client/gui/TreasureChangerScreen.java",
+          "src/main/java/net/mcreator/treasureseeker/world/inventory/TreasureChangerMenu.java",
+          "src/main/java/net/mcreator/treasureseeker/network/TreasureChangerButtonMessage.java"
+        ]
+      }
     },
     {
       "name": "TreasureChangerGUI",
@@ -32,6 +48,9 @@
       "locked_code": false,
       "registry_name": "treasure_changer_gui",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/procedures/TreasureChangerGUIProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -46,7 +65,16 @@
       "sortid": 5,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasure_station"
+      "registry_name": "treasure_station",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/block/entity/OreReverseStationBlockEntity.java",
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_station.json",
+          "src/main/resources/assets/treasure_seeker/blockstates/treasure_station.json",
+          "src/main/resources/assets/treasure_seeker/models/block/treasure_station.json",
+          "src/main/java/net/mcreator/treasureseeker/block/OreReverseStationBlock.java"
+        ]
+      }
     },
     {
       "name": "TreasureSeeker",
@@ -59,7 +87,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_seeker_leggings.json",
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_seeker_helmet.json",
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_seeker_boots.json",
+          "src/main/resources/assets/treasure_seeker/models/item/treasure_seeker_chestplate.json",
+          "src/main/java/net/mcreator/treasureseeker/item/TreasureSeekerItem.java"
+        ]
       }
     },
     {
@@ -68,7 +103,12 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasurepickaxe"
+      "registry_name": "treasurepickaxe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/treasurepickaxe.json"
+        ]
+      }
     },
     {
       "name": "Treasureseekerhelmet",
@@ -76,7 +116,12 @@
       "sortid": 8,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasureseekerhelmet"
+      "registry_name": "treasureseekerhelmet",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/treasureseekerhelmet.json"
+        ]
+      }
     },
     {
       "name": "Tresureseekerchestplate",
@@ -84,7 +129,12 @@
       "sortid": 9,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tresureseekerchestplate"
+      "registry_name": "tresureseekerchestplate",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/tresureseekerchestplate.json"
+        ]
+      }
     },
     {
       "name": "Treasureseekerleggings",
@@ -92,7 +142,12 @@
       "sortid": 10,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasureseekerleggings"
+      "registry_name": "treasureseekerleggings",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/treasureseekerleggings.json"
+        ]
+      }
     },
     {
       "name": "Treasureseekerboots",
@@ -100,7 +155,12 @@
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasureseekerboots"
+      "registry_name": "treasureseekerboots",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/treasureseekerboots.json"
+        ]
+      }
     },
     {
       "name": "Treasurechangerstation",
@@ -108,7 +168,12 @@
       "sortid": 12,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "treasurechangerstation"
+      "registry_name": "treasurechangerstation",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/treasure_seeker/recipes/treasurechangerstation.json"
+        ]
+      }
     },
     {
       "name": "TreasurePickEnchant",
@@ -118,10 +183,44 @@
       "locked_code": false,
       "registry_name": "treasure_pick_enchant",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/procedures/TreasurePickEnchantProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "itemstack",
             "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OreReverseStationUpdateTick",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ore_reverse_station_update_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/treasureseeker/procedures/OreReverseStationUpdateTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -132,15 +231,19 @@
   "language_map": {
     "en_us": {
       "itemGroup.tabtreasure_seeker": "Treasure Seeker",
+      "gui.treasure_seeker.treasure_changer.label_treasure_station": "Ore Station",
+      "gui.treasure_seeker.treasure_changer.button_mine": "Mine!",
       "item.treasure_bag_addon.treasure_seeker_leggings": "Treasure Seeker Leggings",
+      "gui.treasure_seeker.treasure_changer.label_ore": "Ore",
       "item.treasure_seeker.treasure_seeker_leggings": "Treasure Seeker Leggings",
       "item.treasure_bag_addon.treasure_pick": "Treasure Pickaxe",
       "item.treasure_seeker.treasure_seeker_chestplate": "Treasure Seeker Body",
-      "item.treasure_seeker.treasure_pick": "Treasure Pickaxe",
+      "item.treasure_seeker.treasure_pick": "Miner\u0027s Haven",
       "block.treasure_seeker.treasure_station": "Treasure Station",
       "item.treasure_bag_addon.treasure_seeker_boots": "Treasure Seeker Boots",
       "item.treasure_bag_addon.treasure_seeker_chestplate": "Treasure Seeker Body",
       "item.treasure_seeker.treasure_seeker_boots": "Treasure Seeker Boots",
+      "gui.treasure_seeker.treasure_changer.label_pickaxe": "Pickaxe",
       "block.treasure_bag_addon.ore_reverse_station": "Ore Reverse Station",
       "item.treasure_seeker.treasure_seeker_helmet": "Treasure Seeker Helmet",
       "item.treasure_bag_addon.treasure_seeker_helmet": "Treasure Seeker Helmet"
@@ -153,7 +256,7 @@
   "workspaceSettings": {
     "modid": "treasure_seeker",
     "modName": "Treasure seeker",
-    "version": "2.5.0",
+    "version": "3.0.0",
     "description": "Treasure seeker adds armor and tools.",
     "author": "orangejewce92",
     "websiteURL": "https://mcreator.net",
@@ -164,10 +267,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
+    "currentGenerator": "forge-1.19.2",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.treasureseeker",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200348217
+  "mcreatorVersion": 202300336712
 }

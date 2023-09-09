@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "treasure_seeker:blocks/smithing_table_bottom1",
-    "up": "treasure_seeker:blocks/smithnig_table_top1",
-    "north": "treasure_seeker:blocks/smithing_table_front1",
-    "east": "treasure_seeker:blocks/smithing_table_front",
-    "south": "treasure_seeker:blocks/smithing_table_side1",
-    "west": "treasure_seeker:blocks/smithing_table_side1",
-    "particle": "treasure_seeker:blocks/smithing_table_bottom1"
-  }
+    "down": "treasure_seeker:blocks/smithing_table_bottom_1",
+    "up": "treasure_seeker:blocks/smithing_table_top_1",
+    "north": "treasure_seeker:blocks/smithing_table_front_1",
+    "east": "treasure_seeker:blocks/smithing_table_back_1",
+    "south": "treasure_seeker:blocks/smithing_table_side_b_1",
+    "west": "treasure_seeker:blocks/smithing_table_side_1",
+    "particle": "treasure_seeker:blocks/smithing_table_bottom_1"
+  },
+  "render_type": "solid"
 }

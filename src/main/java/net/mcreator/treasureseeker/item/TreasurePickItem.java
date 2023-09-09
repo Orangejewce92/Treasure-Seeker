@@ -9,7 +9,6 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.treasureseeker.procedures.TreasurePickEnchantProcedure;
@@ -21,7 +20,7 @@ public class TreasurePickItem extends PickaxeItem {
 	public TreasurePickItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 100;
+				return 500;
 			}
 
 			public float getSpeed() {
@@ -29,11 +28,11 @@ public class TreasurePickItem extends PickaxeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 1.9999999999999996f;
+				return 2f;
 			}
 
 			public int getLevel() {
-				return 3;
+				return 4;
 			}
 
 			public int getEnchantmentValue() {
@@ -41,18 +40,18 @@ public class TreasurePickItem extends PickaxeItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.EMPTY;
+				return Ingredient.of();
 			}
 		}, 1, -2.5f, new Item.Properties().tab(TreasureSeekerModTabs.TAB_TREASURE_SEEKER).fireResistant());
 	}
 
 	@Override
-	public boolean hasContainerItem(ItemStack stack) {
+	public boolean hasCraftingRemainingItem(ItemStack stack) {
 		return true;
 	}
 
 	@Override
-	public ItemStack getContainerItem(ItemStack itemstack) {
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
 		return new ItemStack(this);
 	}
 
@@ -64,7 +63,7 @@ public class TreasurePickItem extends PickaxeItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("This pickaxe can Bring Extra Fortune with the Treasure Station"));
+		list.add(Component.literal("This pickaxe can Bring Extra Fortune with the Treasure Station"));
 	}
 
 	@Override

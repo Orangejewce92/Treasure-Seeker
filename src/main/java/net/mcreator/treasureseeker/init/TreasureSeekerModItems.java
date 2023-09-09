@@ -20,14 +20,10 @@ import net.mcreator.treasureseeker.TreasureSeekerMod;
 public class TreasureSeekerModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TreasureSeekerMod.MODID);
 	public static final RegistryObject<Item> TREASURE_PICK = REGISTRY.register("treasure_pick", () -> new TreasurePickItem());
-	public static final RegistryObject<Item> TREASURE_STATION = block(TreasureSeekerModBlocks.TREASURE_STATION,
-			TreasureSeekerModTabs.TAB_TREASURE_SEEKER);
-	public static final RegistryObject<Item> TREASURE_SEEKER_HELMET = REGISTRY.register("treasure_seeker_helmet",
-			() -> new TreasureSeekerItem.Helmet());
-	public static final RegistryObject<Item> TREASURE_SEEKER_CHESTPLATE = REGISTRY.register("treasure_seeker_chestplate",
-			() -> new TreasureSeekerItem.Chestplate());
-	public static final RegistryObject<Item> TREASURE_SEEKER_LEGGINGS = REGISTRY.register("treasure_seeker_leggings",
-			() -> new TreasureSeekerItem.Leggings());
+	public static final RegistryObject<Item> TREASURE_STATION = block(TreasureSeekerModBlocks.TREASURE_STATION, TreasureSeekerModTabs.TAB_TREASURE_SEEKER);
+	public static final RegistryObject<Item> TREASURE_SEEKER_HELMET = REGISTRY.register("treasure_seeker_helmet", () -> new TreasureSeekerItem.Helmet());
+	public static final RegistryObject<Item> TREASURE_SEEKER_CHESTPLATE = REGISTRY.register("treasure_seeker_chestplate", () -> new TreasureSeekerItem.Chestplate());
+	public static final RegistryObject<Item> TREASURE_SEEKER_LEGGINGS = REGISTRY.register("treasure_seeker_leggings", () -> new TreasureSeekerItem.Leggings());
 	public static final RegistryObject<Item> TREASURE_SEEKER_BOOTS = REGISTRY.register("treasure_seeker_boots", () -> new TreasureSeekerItem.Boots());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {

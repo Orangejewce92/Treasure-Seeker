@@ -1,6 +1,6 @@
 
 /*
- *    MCreator note: This file will be REGENERATED on each build.
+ *	MCreator note: This file will be REGENERATED on each build.
  */
 package net.mcreator.treasureseeker.init;
 
@@ -18,7 +18,7 @@ public class TreasureSeekerModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(TreasureSeekerModMenus.TREASURE_CHANGER, TreasureChangerScreen::new);
+			MenuScreens.register(TreasureSeekerModMenus.TREASURE_CHANGER.get(), TreasureChangerScreen::new);
 		});
 	}
 }

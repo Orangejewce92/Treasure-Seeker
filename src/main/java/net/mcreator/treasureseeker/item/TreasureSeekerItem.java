@@ -40,7 +40,7 @@ public abstract class TreasureSeekerItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.EMPTY;
+				return Ingredient.of();
 			}
 
 			@Override
@@ -67,7 +67,7 @@ public abstract class TreasureSeekerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "treasure_seeker:textures/models/armor/gold__layer_1.png";
+			return "treasure_seeker:textures/models/armor/iron__layer_1.png";
 		}
 	}
 
@@ -78,7 +78,7 @@ public abstract class TreasureSeekerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "treasure_seeker:textures/models/armor/gold__layer_1.png";
+			return "treasure_seeker:textures/models/armor/iron__layer_1.png";
 		}
 	}
 
@@ -89,7 +89,7 @@ public abstract class TreasureSeekerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "treasure_seeker:textures/models/armor/gold__layer_2.png";
+			return "treasure_seeker:textures/models/armor/iron__layer_2.png";
 		}
 	}
 
@@ -100,7 +100,7 @@ public abstract class TreasureSeekerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "treasure_seeker:textures/models/armor/gold__layer_1.png";
+			return "treasure_seeker:textures/models/armor/iron__layer_1.png";
 		}
 	}
 }

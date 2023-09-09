@@ -4,7 +4,7 @@ package net.mcreator.treasureseeker.world.inventory;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -35,7 +35,7 @@ public class TreasureChangerMenu extends AbstractContainerMenu implements Suppli
 	private boolean bound = false;
 
 	public TreasureChangerMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(TreasureSeekerModMenus.TREASURE_CHANGER, id);
+		super(TreasureSeekerModMenus.TREASURE_CHANGER.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(3);
@@ -54,7 +54,7 @@ public class TreasureChangerMenu extends AbstractContainerMenu implements Suppli
 					itemstack = this.entity.getMainHandItem();
 				else
 					itemstack = this.entity.getOffhandItem();
-				itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				itemstack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					this.internal = capability;
 					this.bound = true;
 				});
@@ -62,39 +62,39 @@ public class TreasureChangerMenu extends AbstractContainerMenu implements Suppli
 				extraData.readByte(); // drop padding
 				Entity entity = world.getEntity(extraData.readVarInt());
 				if (entity != null)
-					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 						this.internal = capability;
 						this.bound = true;
 					});
 			} else { // might be bound to block
 				BlockEntity ent = inv.player != null ? inv.player.level.getBlockEntity(pos) : null;
 				if (ent != null) {
-					ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 						this.internal = capability;
 						this.bound = true;
 					});
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 73, 46) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 74, 42) {
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 132, 47) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 132, 41) {
 			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 47) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 41) {
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return (TreasureSeekerModItems.TREASURE_PICK.get() == stack.getItem());
+				return TreasureSeekerModItems.TREASURE_PICK.get() == stack.getItem();
 			}
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, -5 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, -5 + 142));
 	}
 
 	@Override
@@ -110,30 +110,25 @@ public class TreasureChangerMenu extends AbstractContainerMenu implements Suppli
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
 			if (index < 3) {
-				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true)) {
+				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true))
 					return ItemStack.EMPTY;
-				}
 				slot.onQuickCraft(itemstack1, itemstack);
 			} else if (!this.moveItemStackTo(itemstack1, 0, 3, false)) {
 				if (index < 3 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true)) {
+					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
-					}
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false)) {
+					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false))
 						return ItemStack.EMPTY;
-					}
 				}
 				return ItemStack.EMPTY;
 			}
-			if (itemstack1.getCount() == 0) {
+			if (itemstack1.getCount() == 0)
 				slot.set(ItemStack.EMPTY);
-			} else {
+			else
 				slot.setChanged();
-			}
-			if (itemstack1.getCount() == itemstack.getCount()) {
+			if (itemstack1.getCount() == itemstack.getCount())
 				return ItemStack.EMPTY;
-			}
 			slot.onTake(playerIn, itemstack1);
 		}
 		return itemstack;

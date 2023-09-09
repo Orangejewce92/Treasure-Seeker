@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "treasure_seeker:items/golden_chestplate"
+    "layer0": "treasure_seeker:items/iron_chestplate"
   }
 }

@@ -1,13 +1,13 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "block",
   "definition": {
-    "texture": "smithing_table_bottom1",
-    "textureTop": "smithnig_table_top1",
-    "textureLeft": "smithing_table_front",
-    "textureFront": "smithing_table_front1",
-    "textureRight": "smithing_table_side1",
-    "textureBack": "smithing_table_side1",
+    "texture": "smithing_table_bottom_1",
+    "textureTop": "smithing_table_top_1",
+    "textureLeft": "smithing_table_back_1",
+    "textureFront": "smithing_table_front_1",
+    "textureRight": "smithing_table_side_1",
+    "textureBack": "smithing_table_side_b_1",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -99,14 +99,8 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 0,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
-    "hasInventory": false,
+    "isBonemealable": false,
+    "hasInventory": true,
     "guiBoundTo": "TreasureChanger",
     "openGUIOnRightClick": true,
     "inventorySize": 3,
@@ -132,7 +126,16 @@
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

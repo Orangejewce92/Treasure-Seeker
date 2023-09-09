@@ -1,11 +1,9 @@
-
 package net.mcreator.treasureseeker.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
@@ -25,6 +23,7 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_mine;
 
 	public TreasureChangerScreen(TreasureChangerMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -34,7 +33,7 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageHeight = 155;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("treasure_seeker:textures/screens/treasure_changer.png");
@@ -54,11 +53,8 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("treasure_seeker:textures/screens/golden_pickaxe.png"));
-		this.blit(ms, this.leftPos + 104, this.topPos + 46, 0, 0, 16, 16, 16, 16);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("treasure_seeker:textures/screens/plus.png"));
-		this.blit(ms, this.leftPos + 51, this.topPos + 49, 0, 0, 8, 9, 8, 9);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("treasure_seeker:textures/screens/smithing.png"));
+		this.blit(ms, this.leftPos + -1, this.topPos + -5, 0, 0, 256, 256, 256, 256);
 
 		RenderSystem.disableBlend();
 	}
@@ -79,9 +75,9 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Treasure Station", 11, 8, -39424);
-		this.font.draw(poseStack, "Ore", 73, 35, -12829636);
-		this.font.draw(poseStack, "Pickaxe", 16, 35, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_treasure_station"), 59, 11, -39424);
+		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_ore"), 75, 29, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_pickaxe"), 17, 28, -12829636);
 	}
 
 	@Override
@@ -94,11 +90,13 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 100, this.topPos + 10, 56, 20, new TextComponent("Mine!"), e -> {
+		button_mine = new Button(this.leftPos + 177, this.topPos + -3, 56, 20, Component.translatable("gui.treasure_seeker.treasure_changer.button_mine"), e -> {
 			if (true) {
 				TreasureSeekerMod.PACKET_HANDLER.sendToServer(new TreasureChangerButtonMessage(0, x, y, z));
 				TreasureChangerButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:button_mine", button_mine);
+		this.addRenderableWidget(button_mine);
 	}
 }

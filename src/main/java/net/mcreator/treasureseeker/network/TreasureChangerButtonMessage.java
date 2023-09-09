@@ -70,7 +70,6 @@ public class TreasureChangerButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TreasureSeekerMod.addNetworkMessage(TreasureChangerButtonMessage.class, TreasureChangerButtonMessage::buffer,
-				TreasureChangerButtonMessage::new, TreasureChangerButtonMessage::handler);
+		TreasureSeekerMod.addNetworkMessage(TreasureChangerButtonMessage.class, TreasureChangerButtonMessage::buffer, TreasureChangerButtonMessage::new, TreasureChangerButtonMessage::handler);
 	}
 }
