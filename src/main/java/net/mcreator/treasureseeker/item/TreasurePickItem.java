@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.treasureseeker.procedures.TreasurePickEnchantProcedure;
-import net.mcreator.treasureseeker.init.TreasureSeekerModTabs;
 
 import java.util.List;
 
@@ -42,7 +41,7 @@ public class TreasurePickItem extends PickaxeItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of();
 			}
-		}, 1, -2.5f, new Item.Properties().tab(TreasureSeekerModTabs.TAB_TREASURE_SEEKER).fireResistant());
+		}, 1, -2.5f, new Item.Properties().fireResistant());
 	}
 
 	@Override

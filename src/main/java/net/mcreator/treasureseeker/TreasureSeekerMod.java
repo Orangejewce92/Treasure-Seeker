@@ -51,16 +51,15 @@ public class TreasureSeekerMod {
 
 	public TreasureSeekerMod() {
 		MinecraftForge.EVENT_BUS.register(this);
-		TreasureSeekerModTabs.load();
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		TreasureSeekerModBlocks.REGISTRY.register(bus);
+		TreasureSeekerModBlockEntities.REGISTRY.register(bus);
 		TreasureSeekerModItems.REGISTRY.register(bus);
 
-		TreasureSeekerModBlockEntities.REGISTRY.register(bus);
+		TreasureSeekerModTabs.REGISTRY.register(bus);
 
 		TreasureSeekerModMenus.REGISTRY.register(bus);
-
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

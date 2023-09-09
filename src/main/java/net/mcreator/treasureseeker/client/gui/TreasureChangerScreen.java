@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.treasureseeker.world.inventory.TreasureChangerMenu;
 import net.mcreator.treasureseeker.network.TreasureChangerButtonMessage;
@@ -15,7 +15,6 @@ import net.mcreator.treasureseeker.TreasureSeekerMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChangerMenu> {
@@ -39,22 +38,20 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 	private static final ResourceLocation texture = new ResourceLocation("treasure_seeker:textures/screens/treasure_changer.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("treasure_seeker:textures/screens/smithing.png"));
-		this.blit(ms, this.leftPos + -1, this.topPos + -5, 0, 0, 256, 256, 256, 256);
+		guiGraphics.blit(new ResourceLocation("treasure_seeker:textures/screens/smithing.png"), this.leftPos + -1, this.topPos + -5, 0, 0, 256, 256, 256, 256);
 
 		RenderSystem.disableBlend();
 	}
@@ -74,28 +71,26 @@ public class TreasureChangerScreen extends AbstractContainerScreen<TreasureChang
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_treasure_station"), 59, 11, -39424);
-		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_ore"), 75, 29, -12829636);
-		this.font.draw(poseStack, Component.translatable("gui.treasure_seeker.treasure_changer.label_pickaxe"), 17, 28, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.treasure_seeker.treasure_changer.label_treasure_station"), 59, 11, -39424, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.treasure_seeker.treasure_changer.label_ore"), 75, 29, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.treasure_seeker.treasure_changer.label_pickaxe"), 17, 28, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		button_mine = new Button(this.leftPos + 177, this.topPos + -3, 56, 20, Component.translatable("gui.treasure_seeker.treasure_changer.button_mine"), e -> {
+		button_mine = Button.builder(Component.translatable("gui.treasure_seeker.treasure_changer.button_mine"), e -> {
 			if (true) {
 				TreasureSeekerMod.PACKET_HANDLER.sendToServer(new TreasureChangerButtonMessage(0, x, y, z));
 				TreasureChangerButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		});
+		}).bounds(this.leftPos + 177, this.topPos + -3, 56, 20).build();
 		guistate.put("button:button_mine", button_mine);
 		this.addRenderableWidget(button_mine);
 	}

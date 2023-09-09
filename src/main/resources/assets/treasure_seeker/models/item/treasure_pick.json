@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "treasure_seeker:items/iron_pickaxe"
+    "layer0": "treasure_seeker:item/iron_pickaxe"
   }
 }

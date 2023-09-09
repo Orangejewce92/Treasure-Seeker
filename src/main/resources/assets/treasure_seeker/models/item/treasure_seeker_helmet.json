@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "treasure_seeker:items/iron_helmet"
+    "layer0": "treasure_seeker:item/iron_helmet"
   }
 }
